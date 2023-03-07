@@ -19,20 +19,20 @@ _How can you use this project_
 
 **GET HTTP**
 
-* /welcome -> return all data
-* /weather/:id -> return the specific id data
+* / -> return all data
+* /:id -> return the specific id data
 
 **POST HTTP**
 
-* /welcome -> send the specific data
+* / -> send the specific data
 
 **PUT HTTP**
 
-* /welcome/:id -> update data from specific id
+* /:id -> update data from specific id
 
 **DELETE HTTP**
 
-* /welcome/:id -> delete data from specific id 
+* /:id -> delete data from specific id 
 
 
 ## Features
