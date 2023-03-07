@@ -1,5 +1,5 @@
 const {response } = require('express')
-
+const User = require('../models/user')
 
 module.exports.Controllers = {
     getData: (req, res = response)=>{
@@ -14,14 +14,15 @@ module.exports.Controllers = {
             name: 'Jose Portillo'
         })
     },
-    postData: (req, res = response)=>{
+    postData: async(req, res = response)=>{
         const body = req.body
 
+        const user = new User(body)
+        await user.save()
+
         res.json({
-            method: 'POST',
-            message: 'Welcom to my first node project!',
-            description: 'The data was upload with the next information',
-            body: body
+            message: 'The user was save in data base',
+            user
         })
     },
     putData: (req, res = response)=>{
