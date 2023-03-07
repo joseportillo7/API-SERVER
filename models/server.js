@@ -1,17 +1,30 @@
 const express = require('express')
+const cors = require('cors')
 
 class Server {
     constructor(){
         this.port = process.env.PORT
+        this.mainpath = ''
         this.app = express()
 
+        //Middlewares
+        this.middlewares()
+
+        //Routes
         this.routes()
     }
 
+    middlewares(){
+
+        //Parse Json application
+        this.app.use(express.json())
+        
+        //Using cors to enable this project
+        this.app.use(cors())
+    }
+
     routes(){
-        this.app.get('/welcome',(req,res)=>{
-            res.send(`Welcome to my first node project!`)
-        })
+        this.app.use(this.mainpath, require('../routes'))
     }
 
     listen(){
