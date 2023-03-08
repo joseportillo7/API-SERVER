@@ -1,5 +1,11 @@
 # ABOUT PROJECT
-This project helps to create a structure of NodeJs server quickly and easily.
+This project helps to create a CRUD for users using MongoDB, you can see the following methods: 
+
+1. List all users using a http get method
+2. Show a specific user using a http get method 
+3. Create a user using a http post method
+4. Update a user using a http put method
+5. Delete a specific user using a http delete method 
 
 ***
 
