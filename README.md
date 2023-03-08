@@ -5,10 +5,11 @@ This project helps to create a structure of NodeJs server quickly and easily.
 
 ## Installation
 1. Clone repository or download files
-2. npm install - to install all dependencies for the package file
+2. npm install - installing all dependencies into package file
 3. create a .env file and put in those code lines
 ```
 PORT = "any port"
+CONNECTION_DB = "connection from Mongo DB"
 ```
 4. run project with node app.js
 
@@ -19,24 +20,24 @@ _How can you use this project_
 
 **GET HTTP**
 
-* / -> return all data
-* /:id -> return the specific id data
+* /user/list -> return all data from users
+* /user/:id -> return the specific user
 
 **POST HTTP**
 
-* / -> send the specific data
+* /user -> send user information into database
 
 **PUT HTTP**
 
-* /:id -> update data from specific id
+* /user/:id -> update user from specific id
 
 **DELETE HTTP**
 
-* /:id -> delete data from specific id 
+* /user/:id -> delete user from specific id
 
 
 ## Features
 1. express
 2. dotenv
-3. axios
+3. mongoose
 4. cors
