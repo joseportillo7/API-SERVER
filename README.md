@@ -47,3 +47,5 @@ _How can you use this project_
 2. dotenv
 3. mongoose
 4. cors
+5. bcryptjs
+6. express-validator
