@@ -5,9 +5,16 @@ const { Validations } = require('../helpers/custom-validations')
 
 const router = express.Router()
 
-router.get('/user/list',Controllers.getUser)
+router.get('/user/list',[
+
+    Validations.validateJWT,
+
+],Controllers.getUser)
 
 router.get('/user/:id', [
+
+    Validations.validateJWT,
+
     //notEmpty fields
     check('id').notEmpty().withMessage('ID cannot be empty'),
 
@@ -20,6 +27,8 @@ router.get('/user/:id', [
 ],Controllers.getUserById)
 
 router.post('/user', [
+
+    Validations.validateJWT,
 
     //notEmpty fields
     check('name','Name is a mandatory field, it cannot be empty').notEmpty(),
@@ -37,7 +46,9 @@ router.post('/user', [
 ] ,Controllers.postUser)
 
 router.put('/user/:id',[
-    
+
+    Validations.validateJWT,
+
     //notEmpty fields
     check('id').notEmpty().withMessage('ID cannot be empty'),
     check('name','Name is a mandatory field, it cannot be empty').notEmpty(),
@@ -57,6 +68,8 @@ router.put('/user/:id',[
 ],Controllers.putUserById)
 
 router.delete('/user/:id',[
+
+    Validations.validateJWT,
 
     //notEmpty fields
     check('id').notEmpty().withMessage('ID cannot be empty'),
